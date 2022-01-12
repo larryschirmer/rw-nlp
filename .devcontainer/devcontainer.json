@@ -45,5 +45,9 @@
   // "postCreateCommand": "pip3 install --user -r requirements.txt",
   // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode",
+  "mounts": [
+		// set "/mnt/storage/ml" to the your systems data store, makes your data store available in container
+		"source=/mnt/wsl/PHYSICALDRIVE1/ml/rw-nlp,target=${containerWorkspaceFolder}/data,type=bind,consistency=delegated"
+	],
   "runArgs": ["--gpus=all"]
 }
